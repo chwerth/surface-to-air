@@ -13,10 +13,9 @@ export class DisplayResponseComponent implements OnInit {
   results = []
 
   ngOnInit() {
-
     this.apicall.sendGetRequest().subscribe((data: any[])=>{
       console.log(data);
-      this.results = data["results"][0]["name"];
+      this.results = data["results"];
     })  
   }
 
