@@ -10,12 +10,14 @@ export class DisplayResponseComponent implements OnInit {
 
   constructor(private apicall: ApiCallService) { }
 
-  printAPIReponse(): void {
-    this.apicall.getExample()
-  }
+  results = []
 
   ngOnInit() {
-    this.printAPIReponse()
+
+    this.apicall.sendGetRequest().subscribe((data: any[])=>{
+      console.log(data);
+      this.results = data["results"][0]["name"];
+    })  
   }
 
 }

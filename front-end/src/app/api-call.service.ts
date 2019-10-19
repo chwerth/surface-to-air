@@ -10,8 +10,7 @@ export class ApiCallService {
     private http: HttpClient
   ) { }
 
-  getExample(): void {
-    this.http.get('https://api.openaq.org/v1/cities')
-      .subscribe((response: Response) => console.log(response))
+  sendGetRequest() {
+    return this.http.get('https://api.openaq.org/v1/cities')
   }
 }
