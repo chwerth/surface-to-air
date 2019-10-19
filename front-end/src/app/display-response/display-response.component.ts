@@ -12,11 +12,14 @@ export class DisplayResponseComponent implements OnInit {
 
   results = []
 
-  ngOnInit() {
+  getCityData() {
+    console.log("The button was clicked! :)")
     this.apicall.sendGetRequest('Huntsville').subscribe((data: any[])=>{
       console.log(data);
       this.results = data["results"];
-    })  
+    })
   }
 
+  ngOnInit() {
+  }
 }
