@@ -10,7 +10,7 @@ export class ApiCallService {
     private http: HttpClient
   ) { }
 
-  sendGetRequest() {
-    return this.http.get('https://api.openaq.org/v1/cities')
+  sendGetRequest(city: String) {
+    return this.http.get('https://api.openaq.org/v1/measurements?city=' + city)
   }
 }
