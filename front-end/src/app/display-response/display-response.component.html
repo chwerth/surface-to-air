@@ -1,2 +1,6 @@
-<button (click)="getCityData()">I am a humble button</button>
-<li>{{results | json}}</li>
+    
+<div>
+    <input #myBox type="text">
+    <button (click)="getCityData(myBox.value)">I am a humble button</button>
+</div>
+<li *ngIf = "show">{{results | json}}</li>

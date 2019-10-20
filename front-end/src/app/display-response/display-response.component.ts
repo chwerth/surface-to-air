@@ -10,13 +10,16 @@ export class DisplayResponseComponent implements OnInit {
 
   constructor(private apicall: ApiCallService) { }
 
-  results = []
 
-  getCityData() {
+  results = []
+  show = false;
+
+  getCityData(city: String) {
     console.log("The button was clicked! :)")
-    this.apicall.sendGetRequest('Huntsville').subscribe((data: any[])=>{
+    this.apicall.sendGetRequest(city).subscribe((data: any[])=>{
       console.log(data);
       this.results = data["results"];
+      this.show = !this.show
     })
   }
 
