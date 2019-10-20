@@ -5,6 +5,6 @@
 </div>
 <ng-container *ngIf="show">
     <li *ngFor="let result of results">
-        {{result}}
+        {{result | json}}
     </li>
 </ng-container>
