@@ -10,7 +10,6 @@ export class DisplayResponseComponent implements OnInit {
 
   constructor(private apicall: ApiCallService) { }
 
-
   results = []
   show = false;
 

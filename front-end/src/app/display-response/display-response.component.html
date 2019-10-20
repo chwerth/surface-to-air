@@ -3,4 +3,8 @@
     <input #myBox type="text">
     <button (click)="getCityData(myBox.value)">I am a humble button</button>
 </div>
-<li *ngIf = "show">{{results | json}}</li>
+<ng-container *ngIf="show">
+    <li *ngFor="let result of results">
+        {{result}}
+    </li>
+</ng-container>
